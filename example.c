@@ -64,8 +64,8 @@ ssize_t modify2(struct device *dev, struct device_attribute *attr, const char *b
 	return count;	
 }
 
-static DEVICE_ATTR(sysfs_att, S_IRWXO , display, modify);
-static DEVICE_ATTR(sysfs_att2, S_IRWXO , display2, modify2);
+static DEVICE_ATTR(sysfs_att, S_IWUSR | S_IRUGO , display, modify);
+static DEVICE_ATTR(sysfs_att2, S_IWUSR | S_IRUGO , display2, modify2);
 
 static int __init sysfs_example_init(void)
 {
